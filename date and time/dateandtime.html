@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Date & Time</title>
+    <link rel="stylesheet" href="date-time.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Current Date & Time</h1>
+        <div class="wrapper">
+            <div>
+                <h3 id="date">loading...</h3>
+            </div>
+            <div>
+                <h3 id="time">loading...</h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+
+            document.getElementById("date").textContent = `Current  Date: ${date}`;
+            document.getElementById("time").textContent = `Current Time: ${time}`;
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+
+</html>
